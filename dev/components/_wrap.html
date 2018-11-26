@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NL Stock page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+            integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="nl-goods-card-detail">
+    <div class="container">
+        <!--#middle-->
+</div>
+</div>
+<script src="js/main.js"></script>
+<script>
+    $(function () {
+        $('.pictures-slider').slick({
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            autoplay: true,
+            prevArrow: '<div type="button" class="pictures-slider-prev"></div>',
+            nextArrow: '<div type="button" class="pictures-slider-next"></div>',
+            arrows: true
+        });
+        //bottom slider init
+        //init stock and news slider
+        $('.stock-news-slider').slick({
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            variableWidth: true,
+            autoplay: true,
+            prevArrow: '<div type="button" class="stock-slick-prev"></div>',
+            nextArrow: '<div type="button" class="stock-slick-next"></div>',
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 940,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }
+            ]
+        });
+
+    });
+$(function () {
+    const siteWidth = 1280;
+    const scale = screen.width / siteWidth;
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + siteWidth + ', initial-scale=' + scale + '');
+        $('select').niceSelect();
+        $('select').change(function (e) {
+            console.log($('select option:selected').val());
+        })
+});
+</script>
+</body>
+</html>

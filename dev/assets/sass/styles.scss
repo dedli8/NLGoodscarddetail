@@ -1,0 +1,18 @@
+@import 'settings';
+@import 'mixins';
+.nl-goods-card-detail{
+  @import 'reset';
+  @import 'nice-select';
+  @import 'tabs';
+  font-family: $ubuntu;
+  font-weight: 300;
+  font-size: 0;
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-size: 0;
+  }
+  @import "../../components/breadcrumbs/_breadcrumbs.scss";
+  @import "../../components/goodscarddetails/_goodscarddetails.scss";
+  @import "../../components/stock/_stock.scss";
+}
